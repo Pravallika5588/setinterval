@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Color Loop</title>
+  <style>
+    body {
+      transition: background-color 1s ease;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .animated-text {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      color: #333;
+    }
+   
+
+ 
+  </style>
+</head>
+<body>
+
+    <div class="animated-text" id="textDisplay">Welcome!</div>
+    
+   
+<script>
+  const colors = ['#ff6347', '#32cd32', '#1e90ff', '#ff69b4', '#f0e68c']; 
+  let currentColorIndex = 0;
+
+  function changeBackgroundColor() {
+    document.body.style.backgroundColor = colors[currentColorIndex];
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+    setTimeout(changeBackgroundColor, 4000);
+  }
+  changeBackgroundColor();
+  const messages = ["Hi....", "Hello there!", "How are you?", "Have a great day!", "Stay Safe!"];
+  let currentMessageIndex = 0;
+  const textInterval = setInterval(() => {
+    document.getElementById('textDisplay').textContent = messages[currentMessageIndex];
+    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+  }, 4000); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
